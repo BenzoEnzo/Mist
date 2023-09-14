@@ -11,7 +11,9 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.reactive.function.client.WebClient;
 import pl.bartus.benzo.enzo.mist.model.dto.request.CreateMessageRequest;
 import pl.bartus.benzo.enzo.mist.model.dto.request.ReadMessageRequest;
+import pl.bartus.benzo.enzo.mist.model.dto.response.CreateMessageResponse;
 import pl.bartus.benzo.enzo.mist.model.dto.response.GetAllMessegesResponse;
+import pl.bartus.benzo.enzo.mist.model.dto.response.ReadMessageResponse;
 import pl.bartus.benzo.enzo.mist.resources.CryptoMessageApi;
 import reactor.core.publisher.Mono;
 
@@ -38,23 +40,21 @@ public class CryptoMessageClient implements CryptoMessageApi {
         return ResponseEntity.ok().body(responseBody);
     }
 
-    public ResponseEntity<String> createMessage(CreateMessageRequest createMessageRequest){
-        return webClient.post()
+    public ResponseEntity<Mono<CreateMessageResponse>>createMessage(CreateMessageRequest createMessageRequest){
+        Mono<CreateMessageResponse> responseBody = webClient.post()
                 .uri("/create")
                 .bodyValue(createMessageRequest)
                 .retrieve()
-                .bodyToMono(String.class)
-                .map(responseBody -> ResponseEntity.ok().body(responseBody))
-                .block();
+                .bodyToMono(CreateMessageResponse.class);
+        return ResponseEntity.ok().body(responseBody);
     }
 
-    public ResponseEntity<String> readMessage(ReadMessageRequest readMessageRequest){
-        return webClient.post()
+    public ResponseEntity<Mono<ReadMessageResponse>> readMessage(ReadMessageRequest readMessageRequest) {
+        Mono<ReadMessageResponse> responseBody = webClient.post()
                 .uri("/read")
                 .bodyValue(readMessageRequest)
                 .retrieve()
-                .bodyToMono(String.class)
-                .map(responseBody -> ResponseEntity.ok().body(responseBody))
-                .block();
+                .bodyToMono(ReadMessageResponse.class);
+        return ResponseEntity.ok().body(responseBody);
     }
 }

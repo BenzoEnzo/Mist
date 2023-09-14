@@ -6,7 +6,9 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import pl.bartus.benzo.enzo.mist.model.dto.request.CreateMessageRequest;
 import pl.bartus.benzo.enzo.mist.model.dto.request.ReadMessageRequest;
+import pl.bartus.benzo.enzo.mist.model.dto.response.CreateMessageResponse;
 import pl.bartus.benzo.enzo.mist.model.dto.response.GetAllMessegesResponse;
+import pl.bartus.benzo.enzo.mist.model.dto.response.ReadMessageResponse;
 import pl.bartus.benzo.enzo.mist.resources.CryptoMessageApi;
 import reactor.core.publisher.Mono;
 
@@ -25,13 +27,13 @@ public class MsgController {
         return cryptoMessageApi.getMessages();
     }
 
-    @PostMapping(value = "/create", produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<String> createMessage(@RequestBody CreateMessageRequest createMessageRequest){
+    @PostMapping(value = "/create-message", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<Mono<CreateMessageResponse>> createMessage(@RequestBody CreateMessageRequest createMessageRequest){
         return cryptoMessageApi.createMessage(createMessageRequest);
     }
 
-    @PostMapping(value = "/read", produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<String> readMessage(@RequestBody ReadMessageRequest readMessageRequest){
+    @PostMapping(value = "/read-message", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<Mono<ReadMessageResponse>> readMessage(@RequestBody ReadMessageRequest readMessageRequest){
         return cryptoMessageApi.readMessage(readMessageRequest);
     }
 }
