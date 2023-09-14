@@ -1,4 +1,4 @@
-package pl.bartus.benzo.enzo.mist.resources.external;
+package pl.bartus.benzo.enzo.mist.resources.external.crypto.msg;
 
 
 import lombok.extern.slf4j.Slf4j;
@@ -14,7 +14,8 @@ import pl.bartus.benzo.enzo.mist.model.dto.request.ReadMessageRequest;
 import pl.bartus.benzo.enzo.mist.model.dto.response.CreateMessageResponse;
 import pl.bartus.benzo.enzo.mist.model.dto.response.GetAllMessegesResponse;
 import pl.bartus.benzo.enzo.mist.model.dto.response.ReadMessageResponse;
-import pl.bartus.benzo.enzo.mist.resources.CryptoMessageApi;
+import pl.bartus.benzo.enzo.mist.resources.external.ExternalApi;
+import pl.bartus.benzo.enzo.mist.resources.external.Logger;
 import reactor.core.publisher.Mono;
 
 import java.util.List;

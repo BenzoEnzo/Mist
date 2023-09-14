@@ -11,4 +11,5 @@ import org.springframework.context.annotation.PropertySource;
 @ConfigurationProperties(prefix = "crypto")
 public class ExternalApi {
     private String msg;
+    private String key;
 }
