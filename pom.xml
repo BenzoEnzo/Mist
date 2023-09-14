@@ -9,6 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>pl.bartus.benzo.enzo</groupId>
+	<packaging>pom</packaging>
 	<artifactId>Mist</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>Mist</name>
@@ -16,6 +17,9 @@
 	<properties>
 		<java.version>17</java.version>
 	</properties>
+	<modules>
+	<module>mist-app</module>
+	</modules>
 	<dependencies>
 	</dependencies>
 
