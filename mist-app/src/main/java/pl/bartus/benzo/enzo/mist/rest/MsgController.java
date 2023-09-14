@@ -1,12 +1,12 @@
-package pl.bartus.benzo.enzo.mist.application.rest;
+package pl.bartus.benzo.enzo.mist.rest;
 
 
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import pl.bartus.benzo.enzo.mist.application.model.dto.request.CreateMessageRequest;
-import pl.bartus.benzo.enzo.mist.application.model.dto.request.ReadMessageRequest;
-import pl.bartus.benzo.enzo.mist.application.resources.CryptoMessageApi;
+import pl.bartus.benzo.enzo.mist.model.dto.request.CreateMessageRequest;
+import pl.bartus.benzo.enzo.mist.model.dto.request.ReadMessageRequest;
+import pl.bartus.benzo.enzo.mist.resources.CryptoMessageApi;
 
 @RestController
 @RequestMapping("/api/mist")

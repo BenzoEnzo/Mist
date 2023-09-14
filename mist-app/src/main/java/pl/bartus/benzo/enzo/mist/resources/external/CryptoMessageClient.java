@@ -1,4 +1,4 @@
-package pl.bartus.benzo.enzo.mist.application.resources.external;
+package pl.bartus.benzo.enzo.mist.resources.external;
 
 
 import lombok.extern.slf4j.Slf4j;
@@ -8,9 +8,9 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
 import org.springframework.web.reactive.function.client.WebClient;
-import pl.bartus.benzo.enzo.mist.application.model.dto.request.CreateMessageRequest;
-import pl.bartus.benzo.enzo.mist.application.model.dto.request.ReadMessageRequest;
-import pl.bartus.benzo.enzo.mist.application.resources.CryptoMessageApi;
+import pl.bartus.benzo.enzo.mist.model.dto.request.CreateMessageRequest;
+import pl.bartus.benzo.enzo.mist.model.dto.request.ReadMessageRequest;
+import pl.bartus.benzo.enzo.mist.resources.CryptoMessageApi;
 
 @Slf4j
 @Component

@@ -1,4 +1,4 @@
-package pl.bartus.benzo.enzo.mist.application.model.dto.request;
+package pl.bartus.benzo.enzo.mist.model.dto.request;
 
 
 

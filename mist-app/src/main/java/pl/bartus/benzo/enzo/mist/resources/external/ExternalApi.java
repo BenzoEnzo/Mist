@@ -1,4 +1,4 @@
-package pl.bartus.benzo.enzo.mist.application.resources.external;
+package pl.bartus.benzo.enzo.mist.resources.external;
 
 import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;
