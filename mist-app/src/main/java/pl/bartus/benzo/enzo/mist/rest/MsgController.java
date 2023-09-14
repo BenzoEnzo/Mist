@@ -6,7 +6,11 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import pl.bartus.benzo.enzo.mist.model.dto.request.CreateMessageRequest;
 import pl.bartus.benzo.enzo.mist.model.dto.request.ReadMessageRequest;
+import pl.bartus.benzo.enzo.mist.model.dto.response.GetAllMessegesResponse;
 import pl.bartus.benzo.enzo.mist.resources.CryptoMessageApi;
+import reactor.core.publisher.Mono;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/api/mist")
@@ -17,7 +21,7 @@ public class MsgController {
         this.cryptoMessageApi = cryptoMessageApi;
     }
     @GetMapping
-    public ResponseEntity<String> getMessages(){
+    public ResponseEntity<Mono<List<GetAllMessegesResponse>>> getMessages(){
         return cryptoMessageApi.getMessages();
     }
 
