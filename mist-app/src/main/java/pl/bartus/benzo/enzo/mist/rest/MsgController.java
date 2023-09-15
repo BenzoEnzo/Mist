@@ -3,6 +3,7 @@ package pl.bartus.benzo.enzo.mist.rest;
 
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 import pl.bartus.benzo.enzo.mist.model.dto.request.CreateMessageRequest;
 import pl.bartus.benzo.enzo.mist.model.dto.request.ReadMessageRequest;
@@ -41,6 +42,7 @@ public class MsgController {
     public ResponseEntity<Mono<ReadMessageResponse>> readMessage(@RequestBody ReadMessageRequest readMessageRequest){
         return cryptoMessageApi.readMessage(readMessageRequest);
     }
+
 
     @PostMapping(value = "/verify-token", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Mono<VerifyResponse>> verifySecurityToken(@RequestBody VerifyRequest verifyRequest){

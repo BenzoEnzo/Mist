@@ -5,6 +5,7 @@ import lombok.NonNull;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.*;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Component;
 import org.springframework.web.reactive.function.client.WebClient;
 import pl.bartus.benzo.enzo.mist.model.dto.request.VerifyRequest;
@@ -39,7 +40,7 @@ public class CryptoKeyClient implements CryptoKeyApi {
       VerifyResponse verifyResponse1 = Objects.requireNonNull(ResponseEntity.ok().body(verifyResponse).getBody()).block();
         if(verifyResponse1.isSuccess()){
           String token = TokenUtil.createToken(verifyRequest.encryptedKey());
-          return ResponseEntity.ok().header(HttpHeaders.AUTHORIZATION, "Bearer" + token).body(verifyResponse);
+          return ResponseEntity.ok().header(HttpHeaders.AUTHORIZATION, "Bearer " + token).body(verifyResponse);
       } else {
           return ResponseEntity.status(400).body(verifyResponse);
       }
