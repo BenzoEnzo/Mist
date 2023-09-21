@@ -1,4 +1,4 @@
 export interface CreateMessageRequest {
   content: string;
-  deleteAfter: number;
+  deleteAfterTime: number;
 }
