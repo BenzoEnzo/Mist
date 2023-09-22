@@ -1,7 +1,6 @@
-
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import {ReadMessageRequest} from "../models/read-message.request";
+import {ReadMessageRequest} from "../models/read-message";
 import {READ_MESSAGE_ENDPOINT} from "../config/api.config";
 import {Observable, tap} from "rxjs";
 

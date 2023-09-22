@@ -3,8 +3,8 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 import { CreateMessageService} from '../message-services/create-message.service';
 import {ReadMessageService} from "../message-services/read-message.service";
 import 'bootstrap';
-import {ReadMessageRequest} from "../models/read-message.request";
-import {CreateMessageRequest} from "../models/create-message.request";
+import {ReadMessageRequest} from "../models/read-message";
+import {CreateMessageRequest} from "../models/create-message";
 import {tap} from "rxjs";
 
 @Component({

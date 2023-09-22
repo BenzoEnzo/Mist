@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { CREATE_MESSAGE_ENDPOINT } from "../config/api.config";
-import {CreateMessageRequest} from "../models/create-message.request";
-import {CreateMessageResponse} from "../models/create-message.response";
+import {CreateMessageRequest} from "../models/create-message";
+import {CreateMessageResponse} from "../models/create-message";
 import {tap} from "rxjs";
 
 @Injectable({
