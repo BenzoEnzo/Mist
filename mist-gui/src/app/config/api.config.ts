@@ -1,3 +1,5 @@
-export const MIST_API = 'http://localhost:8080/api/mist';
-export const READ_MESSAGE_ENDPOINT = `${MIST_API}/read-message`;
-export const CREATE_MESSAGE_ENDPOINT = `${MIST_API}/create-message`;
+import { environment } from '../environment/environment';
+
+export const REST_API = `${environment.MIST_API}`;
+export const READ_MESSAGE_ENDPOINT = `${REST_API}/read-message`;
+export const CREATE_MESSAGE_ENDPOINT = `${REST_API}/create-message`;
