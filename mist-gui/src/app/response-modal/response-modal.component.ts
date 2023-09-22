@@ -7,6 +7,8 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 })
 export class ResponseModalComponent {
   @Input() serverResponse: any;
+  @Input() isCreateMessageResponse!: Function;
+  @Input() isReadMessageResponse!: Function;
   @Output() closeModal = new EventEmitter<void>();
 
   onClose() {

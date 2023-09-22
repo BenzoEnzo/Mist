@@ -1,3 +1,4 @@
+
 export interface ReadMessageResponse {
   content: string;
   openedAt: Date;

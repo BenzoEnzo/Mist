@@ -14,13 +14,11 @@ export class CreateMessageService {
 
   // @ts-ignore
   createMessage(request: CreateMessageRequest): Observable<CreateMessageResponse> {
-
     console.log("Sending request to:", CREATE_MESSAGE_ENDPOINT);
     console.log("Request body:", request);
 
     return this.http.post<CreateMessageResponse>(CREATE_MESSAGE_ENDPOINT, request).pipe(
       tap(response => {
-        console.log("Received response:", response);
       })
     );
   }

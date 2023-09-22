@@ -1,18 +1,15 @@
-<div class="modal show d-block" tabindex="-1">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title">Odpowiedź z serwera</h5>
-        <button type="button" class="close" (click)="onClose()">
-          <span aria-hidden="true">&times;</span>
-        </button>
+<div class="response-modal">
+      <div class="modal-content">
+        <button class="close-button" (click)="onClose()">Zamknij</button>
+        <div *ngIf="serverResponse">
+          <div *ngIf="isCreateMessageResponse(serverResponse)">
+            <p>Kod wiadomosci: {{ serverResponse.id }}</p>
+          </div>
+          <div *ngIf="isReadMessageResponse(serverResponse)">
+            <p>Tresc wiadomosci: {{ serverResponse.content }}</p>
+          </div>
+        </div>
       </div>
-      <div class="modal-body">
-        {{ serverResponse }}
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" (click)="onClose()">Zamknij</button>
-      </div>
-    </div>
-  </div>
 </div>
+
+

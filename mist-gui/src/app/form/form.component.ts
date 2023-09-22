@@ -14,17 +14,17 @@ import {tap} from "rxjs";
 })
 export class FormComponent implements OnInit {
   messageForm: FormGroup;
-  selectedAction: string = 'read'; // Domyślna akcja
+  selectedAction: string = 'read';
   serverResponse: any;
   showModal: boolean = false;
 
   constructor(
     private fb: FormBuilder,
-    private readMessageService: ReadMessageService, // Wstrzyknięcie serwisu do czytania wiadomości
-    private createMessageService: CreateMessageService // Wstrzyknięcie serwisu do tworzenia wiadomości
+    private readMessageService: ReadMessageService,
+    private createMessageService: CreateMessageService
   ) {
     this.messageForm = this.fb.group({
-      action: [this.selectedAction], // Ustawienie domyślnej akcji
+      action: [this.selectedAction],
       messageId: [''],
       messageContent: [''],
       messageExpiry: ['']
@@ -49,7 +49,7 @@ export class FormComponent implements OnInit {
     } else if (this.selectedAction === 'send') {
       const request: CreateMessageRequest = {
         content: this.messageForm.value.messageContent,
-        deleteAfter: this.messageForm.value.messageExpiry
+        deleteAfterTime: this.messageForm.value.messageExpiry
       };
       this.createMessageService.createMessage(request).pipe(tap(response => {
         console.log('Received response:', response);
@@ -61,5 +61,12 @@ export class FormComponent implements OnInit {
 
   closeModal() {
     this.showModal = false;
+  }
+  isCreateMessageResponse(response: any): boolean {
+    return response.hasOwnProperty('id');
+  }
+
+  isReadMessageResponse(response: any): boolean {
+    return response.hasOwnProperty('content');
   }
 }
