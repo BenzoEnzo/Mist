@@ -1,4 +1,4 @@
-package pl.bartus.benzo.enzo.mist.model.dto.response;
+package pl.bartus.benzo.enzo.mist.dto.response;
 
 
 import java.time.LocalDateTime;

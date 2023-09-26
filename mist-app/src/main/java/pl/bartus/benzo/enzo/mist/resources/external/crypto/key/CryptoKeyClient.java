@@ -1,15 +1,13 @@
 package pl.bartus.benzo.enzo.mist.resources.external.crypto.key;
 
 
-import lombok.NonNull;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.*;
-import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Component;
 import org.springframework.web.reactive.function.client.WebClient;
-import pl.bartus.benzo.enzo.mist.model.dto.request.VerifyRequest;
-import pl.bartus.benzo.enzo.mist.model.dto.response.VerifyResponse;
+import pl.bartus.benzo.enzo.mist.dto.request.VerifyRequest;
+import pl.bartus.benzo.enzo.mist.dto.response.VerifyResponse;
 import pl.bartus.benzo.enzo.mist.resources.external.ExternalApi;
 import pl.bartus.benzo.enzo.mist.resources.external.Logger;
 import pl.bartus.benzo.enzo.mist.resources.external.TokenUtil;
