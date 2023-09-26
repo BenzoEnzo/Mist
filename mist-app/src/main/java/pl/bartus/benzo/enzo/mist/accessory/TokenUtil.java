@@ -10,11 +10,10 @@ public class TokenUtil {
 
     public static String createToken(String key) {
         Algorithm algorithm = Algorithm.HMAC256(SECRET);
-        final String token = JWT.create()
+        return JWT.create()
                 .withIssuer("crypto")
                 .withClaim("security-key", key)
                 .withExpiresAt(new Date(System.currentTimeMillis() + 3600 * 1000))
                 .sign(algorithm);
-        return token;
     }
 }

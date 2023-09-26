@@ -18,8 +18,8 @@ import java.util.Objects;
 
 @Slf4j
 @Component
-public class CryptoKeyClient implements CryptoKeyApi {
-    private WebClient webClient;
+public final class CryptoKeyClient implements CryptoKeyApi {
+    private final WebClient webClient;
 
     @Autowired
     public CryptoKeyClient(WebClient.Builder webClientBuilder, ExternalApi externalApi) {

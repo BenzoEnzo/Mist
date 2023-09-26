@@ -23,8 +23,8 @@ import java.util.List;
 
 @Slf4j
 @Component
-public class CryptoMessageClient implements CryptoMessageApi {
-    private WebClient webClient;
+public final class CryptoMessageClient implements CryptoMessageApi {
+    private final WebClient webClient;
     @Autowired
     public CryptoMessageClient(WebClient.Builder webClientBuilder, ExternalApi externalApi){
         this.webClient = webClientBuilder
