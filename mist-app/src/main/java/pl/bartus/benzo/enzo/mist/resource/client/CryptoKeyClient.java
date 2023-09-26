@@ -1,4 +1,4 @@
-package pl.bartus.benzo.enzo.mist.resources.external.crypto.key;
+package pl.bartus.benzo.enzo.mist.resource.client;
 
 
 import lombok.extern.slf4j.Slf4j;
@@ -8,9 +8,10 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.reactive.function.client.WebClient;
 import pl.bartus.benzo.enzo.mist.dto.request.VerifyRequest;
 import pl.bartus.benzo.enzo.mist.dto.response.VerifyResponse;
-import pl.bartus.benzo.enzo.mist.resources.external.ExternalApi;
-import pl.bartus.benzo.enzo.mist.resources.external.Logger;
-import pl.bartus.benzo.enzo.mist.resources.external.TokenUtil;
+import pl.bartus.benzo.enzo.mist.resource.ExternalApi;
+import pl.bartus.benzo.enzo.mist.accessory.Logger;
+import pl.bartus.benzo.enzo.mist.accessory.TokenUtil;
+import pl.bartus.benzo.enzo.mist.web.CryptoKeyApi;
 import reactor.core.publisher.Mono;
 
 import java.util.Objects;

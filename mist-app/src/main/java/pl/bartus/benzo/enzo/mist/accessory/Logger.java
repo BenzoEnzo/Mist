@@ -1,4 +1,4 @@
-package pl.bartus.benzo.enzo.mist.resources.external;
+package pl.bartus.benzo.enzo.mist.accessory;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.reactive.function.client.ExchangeFilterFunction;

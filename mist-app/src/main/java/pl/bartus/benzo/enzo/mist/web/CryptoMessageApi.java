@@ -1,4 +1,4 @@
-package pl.bartus.benzo.enzo.mist.resources.external.crypto.msg;
+package pl.bartus.benzo.enzo.mist.web;
 
 import org.springframework.http.ResponseEntity;
 import pl.bartus.benzo.enzo.mist.dto.request.CreateMessageRequest;

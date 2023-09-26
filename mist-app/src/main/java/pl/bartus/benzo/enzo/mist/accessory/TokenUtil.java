@@ -1,4 +1,4 @@
-package pl.bartus.benzo.enzo.mist.resources.external;
+package pl.bartus.benzo.enzo.mist.accessory;
 
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.algorithms.Algorithm;

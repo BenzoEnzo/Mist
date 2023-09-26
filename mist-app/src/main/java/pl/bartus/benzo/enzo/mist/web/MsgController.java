@@ -1,4 +1,4 @@
-package pl.bartus.benzo.enzo.mist.rest;
+package pl.bartus.benzo.enzo.mist.web;
 
 
 import org.springframework.http.MediaType;
@@ -11,8 +11,6 @@ import pl.bartus.benzo.enzo.mist.dto.response.CreateMessageResponse;
 import pl.bartus.benzo.enzo.mist.dto.response.GetAllMessegesResponse;
 import pl.bartus.benzo.enzo.mist.dto.response.ReadMessageResponse;
 import pl.bartus.benzo.enzo.mist.dto.response.VerifyResponse;
-import pl.bartus.benzo.enzo.mist.resources.external.crypto.key.CryptoKeyApi;
-import pl.bartus.benzo.enzo.mist.resources.external.crypto.msg.CryptoMessageApi;
 import reactor.core.publisher.Mono;
 
 import java.util.List;
