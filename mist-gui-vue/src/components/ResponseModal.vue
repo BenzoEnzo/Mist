@@ -55,6 +55,7 @@ const copyToClipboard = (id) => {
             </span>
           </p>
         </div>
+
       </div>
     </div>
   </div>
@@ -80,9 +81,11 @@ const copyToClipboard = (id) => {
   padding: 20px;
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  width: 300px;
+  width: 500px;
+  min-height: 100px;
   position: relative;
   overflow-y: auto;
+  overflow-x: auto;
 }
 
 .close-button {

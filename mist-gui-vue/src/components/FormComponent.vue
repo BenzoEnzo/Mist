@@ -13,6 +13,7 @@ const showModal = ref(false);
 const createService = new CreateMessageService();
 const readService = new ReadMessageService();
 
+
 const onActionChange = () => {
   console.log('Selected action:', action.value);
 };
@@ -20,7 +21,6 @@ const onActionChange = () => {
 const onSubmit = () => {
   if (action.value === 'read') {
     const request = { id: messageId.value };
-
     readService.readMessage(request).then(response => {
       console.log('Received response:', response);
       serverResponse.value = response;
@@ -31,7 +31,6 @@ const onSubmit = () => {
       content: messageContent.value,
       deleteAfterTime: messageExpiry.value
     };
-
     createService.createMessage(request).then(response => {
       console.log('Received response:', response);
       serverResponse.value = response;
@@ -74,7 +73,7 @@ const isReadMessageResponse = (response) => {
       <div v-if="action === 'send'">
         <div class="form-group">
           <label for="messageContent">Treść wiadomości:</label>
-          <input type="text" class="form-control" id="messageContent" v-model="messageContent">
+          <textarea class="form-control" id="messageContent" v-model="messageContent"/>
         </div>
 
         <div class="form-group">
@@ -118,6 +117,7 @@ form {
 
 .form-control {
   margin: 15px 0;
+  min-height: 30px;
 }
 
 label {
