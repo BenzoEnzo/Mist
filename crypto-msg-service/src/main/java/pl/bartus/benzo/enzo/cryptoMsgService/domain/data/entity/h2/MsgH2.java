@@ -2,11 +2,18 @@ package pl.bartus.benzo.enzo.cryptoMsgService.domain.data.entity.h2;
 
 import jakarta.persistence.Column;
 
+import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+import lombok.Setter;
 import pl.bartus.benzo.enzo.cryptoMsgService.domain.data.entity.Msg;
+import pl.bartus.benzo.enzo.cryptoMsgService.resource.service.EncryptionService;
 
 import java.time.LocalDateTime;
 
+@Entity
+@Setter
+@Table(name = "message")
 public class MsgH2 extends Msg {
     @Id
     private String id;

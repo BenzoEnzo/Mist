@@ -1,4 +1,4 @@
-package pl.bartus.benzo.enzo.cryptoMsgService.resource;
+package pl.bartus.benzo.enzo.cryptoMsgService.resource.util;
 
 import java.util.Random;
 

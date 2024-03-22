@@ -4,7 +4,8 @@ import org.springframework.web.context.annotation.ApplicationScope;
 import pl.bartus.benzo.enzo.cryptoMsgService.domain.data.dto.request.CreateMsgRequest;
 import pl.bartus.benzo.enzo.cryptoMsgService.domain.data.dto.response.CreateMsgResponse;
 import pl.bartus.benzo.enzo.cryptoMsgService.domain.data.entity.Msg;
-import pl.bartus.benzo.enzo.cryptoMsgService.resource.TimeConverter;
+import pl.bartus.benzo.enzo.cryptoMsgService.resource.service.EncryptionService;
+import pl.bartus.benzo.enzo.cryptoMsgService.resource.util.TimeConverter;
 
 import java.time.LocalDateTime;
 

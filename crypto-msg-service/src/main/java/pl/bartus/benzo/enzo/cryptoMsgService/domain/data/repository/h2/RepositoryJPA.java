@@ -10,7 +10,7 @@ import org.springframework.stereotype.Repository;
 import pl.bartus.benzo.enzo.cryptoMsgService.domain.data.entity.Msg;
 import pl.bartus.benzo.enzo.cryptoMsgService.domain.data.entity.h2.MsgH2;
 import pl.bartus.benzo.enzo.cryptoMsgService.domain.data.repository.MsgRepository;
-import pl.bartus.benzo.enzo.cryptoMsgService.resource.IDGenerator;
+import pl.bartus.benzo.enzo.cryptoMsgService.resource.util.IDGenerator;
 
 import java.util.List;
 import java.util.Optional;

@@ -6,6 +6,7 @@ import org.springframework.data.mongodb.core.annotation.Collation;
 import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
 import pl.bartus.benzo.enzo.cryptoMsgService.domain.data.entity.Msg;
+import pl.bartus.benzo.enzo.cryptoMsgService.resource.service.EncryptionService;
 
 import java.time.LocalDateTime;
 

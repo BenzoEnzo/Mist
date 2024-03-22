@@ -10,23 +10,20 @@ import pl.bartus.benzo.enzo.cryptoMsgService.domain.data.dto.response.ReadMsgRes
 import pl.bartus.benzo.enzo.cryptoMsgService.domain.data.entity.Msg;
 import pl.bartus.benzo.enzo.cryptoMsgService.domain.data.mapper.CreateMsgMapper;
 import pl.bartus.benzo.enzo.cryptoMsgService.domain.data.mapper.ReadMsgMapper;
-
-import java.time.LocalDateTime;
-import java.util.List;
-import java.util.Objects;
+import pl.bartus.benzo.enzo.cryptoMsgService.resource.service.EncryptionService;
 
 @Service
 @RequiredArgsConstructor
 public class MsgService implements MsgApi {
 
     private final BaseMsgService baseMsgService;
-
-
+    private final EncryptionService encryptionService;
 
     @Override
     public ReadMsgResponse readCryptoMessage(ReadMsgRequest readMsgRequest){
         ReadMsgMapper readMsgMapper = new ReadMsgMapper();
         Msg msg = baseMsgService.findMsgById(readMsgRequest.id());
+        msg.setContent(encryptionService.decrypt(msg.getContent()));
         ReadMsgResponse readMsgResponse = readMsgMapper.responseMapper(msg);
 
         baseMsgService.deleteMsg(readMsgRequest.id());
@@ -38,7 +35,7 @@ public class MsgService implements MsgApi {
     public CreateMsgResponse createCryptoMessage(CreateMsgRequest createMsgRequest) {
         CreateMsgMapper createMsgMapper = new CreateMsgMapper();
         Msg msg = createMsgMapper.requestMapper(createMsgRequest);
-
+        msg.setContent(encryptionService.encrypt(msg.getContent()));
         baseMsgService.saveMsg(msg);
 
         return createMsgMapper.responseMapper(msg);
