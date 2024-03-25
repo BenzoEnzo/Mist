@@ -46,12 +46,6 @@ public class RepositoryJPA implements MsgRepository {
     }
 
     @Override
-    public List<Msg> findAll() {
-        TypedQuery<Msg> query = entityManager.createQuery("SELECT m FROM MsgH2 m", Msg.class);
-        return query.getResultList();
-    }
-
-    @Override
     public void deleteById(String id) {
         findById(id).ifPresent(entityManager::remove);
     }

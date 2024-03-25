@@ -31,11 +31,6 @@ public class RepositoryMongo implements MsgRepository {
     }
 
     @Override
-    public List<Msg> findAll() {
-        return mongoTemplate.findAll(Msg.class);
-    }
-
-    @Override
     public void deleteById(String id) {
         Query query = new Query();
         query.addCriteria(Criteria.where("id").is(id));
